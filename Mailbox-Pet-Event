@@ -1,6 +1,6 @@
 getgenv().Settings = {
     Mailing = {
-  ["Autumn Teddy Bear"] = {Class = "Pet", Amount = "Max"},
+	["Autumn Teddy Bear"] = {Class = "Pet", Amount = "Max"},
 	["Golden Autumn Teddy Bear"] = {Class = "Pet", Amount = "Max"},
 	["Rainbow Autumn Teddy Bear"] = {Class = "Pet", Amount = "Max"},
 	["Shiny Autumn Teddy Bear"] = {Class = "Pet", Amount = "Max"},
@@ -9,7 +9,7 @@ getgenv().Settings = {
 	["Autumn Chest Mimic"] = {Class = "Pet", Amount = "Max"},
 	["Golden Autumn Chest Mimic"] = {Class = "Pet", Amount = "Max"},
 	["Rainbow Autumn Chest Mimic"] = {Class = "Pet", Amount = "Max"},
-  ["Shiny Autumn Chest Mimic"] = {Class = "Pet", Amount = "Max"},
+	["Shiny Autumn Chest Mimic"] = {Class = "Pet", Amount = "Max"},
 	["Shiny Golden Autumn Chest Mimic"] = {Class = "Pet", Amount = "Max"},
 	["Shiny Rainbow Autumn Chest Mimic"] = {Class = "Pet", Amount = "Max"},
     },
