@@ -1,2 +1,13 @@
-getgenv().usernames = {"Username1", "Username2", "Username3"}  -- Danh sách các username được định sẵn.
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Hoith95/Pet-99/main/Mailbox-Huge
+getgenv().Settings = {
+    Mailing = {
+      ["All Huges"] = {Class = "Pet", Amount = 5, AllTypes = true},
+    },
+    Users = {
+        "Username1",
+        "Username2",
+        "Username3",
+    },
+    ["Split Items Evenly"] = true,
+    ["Only Online Accounts"] = false,
+}
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/86847850c3165379f5be2d9d071eaccb.lua"))()
