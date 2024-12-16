@@ -14,7 +14,9 @@ getgenv().Settings = {
 	["Shiny Rainbow Autumn Chest Mimic"] = {Class = "Pet", Amount = "Max"},
     },
     Users = {
-        "",
+        "Username1",
+        "Username2",
+        "Username3",
     },
     ["Split Items Evenly"] = true,
     ["Only Online Accounts"] = false,
