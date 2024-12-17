@@ -1,6 +1,11 @@
 getgenv().Settings = {
     Mailing = {
+        ["2024 Anniversary Gift"] = {Class = "Lootbox", Amount = "Max"},
+        ["Mega Lucky Gingerbread"] = {Class = "Lootbox", Amount = "Max"},
+        ["Snowflake Gift"] = {Class = "Lootbox", Amount = "Max"},
+	["Huge Machine Egg 4"] = {Class = "Egg", Amount = "Max"},
         ["Charm Stone"] = {Class = "Misc", Amount = "Max"},
+        ["Charm Hammer"] = {Class = "Misc", Amount = "Max"},
 	["Huge Machine Egg 4"] = {Class = "Egg", Amount = "Max"},
 	["Hype Egg"] = {Class = "Lootbox", Amount = "Max"},
 	["Overload"] = {Class = "Charm", Amount = "Max"},
@@ -15,11 +20,11 @@ getgenv().Settings = {
 	["Void Spinny Wheel Ticket"] = {Class = "Misc", Amount = "Max"},
     },
     Users = {
-        "Username1",
-        "Username2",
-        "Username3",
+        "studn_4ox",
+        "berez1xg",
+        "idso1bu",
     },
-    ["Split Items Evenly"] = false,
-    ["Only Online Accounts"] = false,
+    ["Split Items Evenly"] = true,
+    ["Only Online Accounts"] = true,
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/86847850c3165379f5be2d9d071eaccb.lua"))()
