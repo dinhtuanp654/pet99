@@ -1,0 +1,14 @@
+--- Script 1 ---
+task.wait(5)
+
+--- Script 2 ---
+task.wait(5)
+
+--- Script 3 ---
+task.wait(5)
+
+--- Script 4 ---
+task.wait(5)
+
+--- Script 5 ---
+task.wait(5)
