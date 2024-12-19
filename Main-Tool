@@ -70,6 +70,6 @@ spawn(function()
 end)
 --- Script 4 ---
 task.wait(5)
-
+if game.PlaceId ~= 8737899170 then repeat game.ReplicatedStorage.Network.World1Teleport:InvokeServer() task.wait(10) until game.PlaceId == 8737899170 end
 --- Script 5 ---
 task.wait(5)
