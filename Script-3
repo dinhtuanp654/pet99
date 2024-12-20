@@ -26,6 +26,7 @@ until game:IsLoaded() and
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.__THINGS.Instances.HolidayEvent.Teleports.Enter
     .CFrame
 task.wait(3)
+
 local v14 = require(game.ReplicatedStorage.Library.Client.Network);
 
 local rs = game:GetService("ReplicatedStorage")
@@ -36,6 +37,7 @@ local RAP = 0
 
 local v4 = require(game.ReplicatedStorage.Library.Client.EventUpgradeCmds);
 local v13 = require(game.ReplicatedStorage.Library.Client.FFlags);
+local v3 = require(game.ReplicatedStorage.Library.Client.CurrencyCmds);
 
 local v20 = {
     "MegaPresentGrowFaster",
@@ -44,13 +46,23 @@ local v20 = {
     "MegaPresentHigherTitanicChance",
     "MegaPresentEggLuckBoost"
 };
+local value = nil
 spawn(function()
     while wait() do
         for i, v in save.Get().Inventory.Misc do
-            if v.id == "Snowflake" and v._am and v._am >= 10 then
-                local v52, v53 = v14.Invoke("SnowMachine_Activate", v._am);
+            if v.id == "Snowflake" then
+                value = v._am
+
+                repeat
+                    wait()
+                    value = math.floor(value / 1.5);
+                until v3.CanAfford("Diamonds", value / 10 * 10000)
+                if value and value >= 10 then
+                    local v52, v53 = v14.Invoke("SnowMachine_Activate", value);
+                end
             end
         end
+
         for i, v in v20 do
             if v4.GetTier(v) < 4 then
                 local v31, v32 = v4.Purchase(v);
