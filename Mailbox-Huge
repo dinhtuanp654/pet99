@@ -1,6 +1,6 @@
 getgenv().Settings = {
     Mailing = {
-        ["All Huges"] = {Class = "Pet", Amount = 1, AllTypes = true},
+        ["All Huges"] = {Class = "Pet", Amount = 10, AllTypes = true},
     },
     Users = {
         "berez1xg",
