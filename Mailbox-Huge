@@ -3,7 +3,6 @@ getgenv().Settings = {
         ["All Huges"] = {Class = "Pet", Amount = 1, AllTypes = true},
     },
     Users = {
-        "berez1xg",
         "seitz5ut",
         "gills6ii",
         "vermi4dm",
