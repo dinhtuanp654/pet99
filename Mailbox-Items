@@ -20,7 +20,7 @@ getgenv().Settings = {
 	["Void Spinny Wheel Ticket"] = {Class = "Misc", Amount = "200"},
     },
     Users = {
-        "studn_4ox",
+        "",
     },
     ["Split Items Evenly"] = false,
     ["Only Online Accounts"] = false,
