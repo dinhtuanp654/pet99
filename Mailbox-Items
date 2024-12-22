@@ -25,7 +25,6 @@ getgenv().Settings = {
 	["Void Spinny Wheel Ticket"] = {Class = "Misc", Amount = "200"},
     },
     Users = {
-        "",
         "berez1xg",
         "seitz5ut",
         "gills6ii",
