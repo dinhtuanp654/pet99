@@ -10,18 +10,18 @@ _G.SCRIPT4 = true
 
 -- Script của bạn
 getgenv().Config = {
-    ["EquipEnchants"] = {"Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Strong Pets", "Coins", "Fortune"},
-    ["CraftSnowflakeGifts"] = false,
+    ["EquipEnchants"] = {"Lucky Eggs","Tap Power","Criticals","Huge Hunter","Treasure Hunter", "Strong Pets", "Fortune"},
+    ["CraftSnowflakeGifts"] = true,
     ["Mailing"] = {
         ["Usernames"] = {""},
         ["Items"] = {
             ["Lootbox"] = {
-                ["Snowflake Gift"] = 5,
-                ["2024 Gargantuan Christmas Present"] = 1,
+                ["Snowflake Gift"] = 500,
+                ["2024 Gargantuan Christmas Present"] = 5,
                 ["2024 X-Large Christmas Present"] = 5,
-                ["2024 Large Christmas Present"] = 25,
-                ["2024 Medium Christmas Present"] = 50,
-                ["2024 Small Christmas Present"] = 100,
+                ["2024 Large Christmas Present"] = 100,
+                ["2024 Medium Christmas Present"] = 250,
+                ["2024 Small Christmas Present"] = 500,
             },
             ["Egg"] = {
                 ["Huge Machine Egg 4"] = 1,
@@ -30,9 +30,8 @@ getgenv().Config = {
         ["MailAllHuges"] = false --// False will mail all new huges, True will send all huges in inventory
     },
     ["Notifications"] = {
-        ["UserID"] = "1092353095171833906",
-        ["Webhook"] = "https://discord.com/api/webhooks/1316401365542768650/4YZQwBoNvjF7bcOqwzL5hTrJtnTvA2ozWrVYS7V43cUGLNtbsXyR_eg59Y25aO-3FGGr"
+        ["UserID"] = "1263292904953217072",
+        ["Webhook"] = "https://discord.com/api/webhooks/1321652270445760563/x7gpDKboshkH1E3ZbK8n0z93FVW_gctX8_ARgNXoMN0MpnxLtHl2CFS5VLuIFGHwCHsM"
     }
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b883bc159a5f609adb4871db6fc15ea8.lua"))()
-
