@@ -12,9 +12,6 @@ getgenv().Settings = {
     },
     Users = {
         "manix6hi",
-        "barus1ik",
-        "billo9xx",
-        "mcane9gb",
     },
     ["Split Items Evenly"] = true,
     ["Only Online Accounts"] = false,
