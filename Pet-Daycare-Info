@@ -1,0 +1,74 @@
+-- Dịch vụ cần thiết
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local httpRequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request)
+
+-- Cấu hình webhook URL (đặt URL webhook của bạn tại đây)
+_G.webhookURL = ""
+
+-- Hàm tính toán số lượng thú cưng có thể đăng ký
+local function calculateEnrollAmount()
+    local success, result = pcall(function()
+        local DaycareCmds = require(game.ReplicatedStorage.Library.Client.DaycareCmds)
+        local maxSlots = DaycareCmds.GetMaxSlots()
+        local usedSlots = DaycareCmds.GetUsedSlots()
+        return maxSlots - usedSlots
+    end)
+    if not success then
+        warn("Lỗi khi tính toán số lượng thú cưng có thể đăng ký:", result)
+        return 0
+    end
+    return result
+end
+
+-- Hàm gửi thông tin qua webhook
+local function sendWebhook(message, username)
+    if _G.webhookURL == "" then
+        warn("Webhook URL chưa được cấu hình.")
+        return
+    end
+
+    -- Payload dữ liệu cho webhook
+    local payload = {
+        username = "Pet Daycare Info",
+        avatar_url = "https://cdn.discordapp.com/embed/avatars/0.png", -- URL avatar (có thể tùy chỉnh)
+        content = string.format("Thông báo từ người chơi: **%s**", username),
+        embeds = {
+            {
+                title = "Thông Tin Daycare",
+                type = "rich",
+                color = 1127128, -- Mã màu
+                fields = {
+                    { name = "Nội dung", value = message, inline = false }
+                },
+                footer = { text = "Thông báo từ Pet Daycare System", icon_url = "https://cdn.discordapp.com/embed/avatars/0.png" }
+            }
+        }
+    }
+
+    -- Gửi yêu cầu tới webhook
+    local response = httpRequest({
+        Url = _G.webhookURL,
+        Method = "POST",
+        Headers = { ["Content-Type"] = "application/json" },
+        Body = HttpService:JSONEncode(payload)
+    })
+
+    if not response or not response.Success then
+        warn("Gửi webhook thất bại.")
+    end
+end
+
+-- Tính toán và gửi thông tin
+local enrollAmount = calculateEnrollAmount()
+local username = Players.LocalPlayer.Name -- Lấy tên tài khoản người chơi
+
+if enrollAmount >= 30 then
+    -- Nếu số slot >= 30, chỉ in thông báo ra console
+    print(string.format("Người chơi: %s - Số lượng thú cưng có thể đăng ký: %d. Không cần gửi webhook.", username, enrollAmount))
+else
+    -- Nếu số slot < 10, gửi thông báo qua webhook
+    local message = string.format("Số lượng thú cưng có thể đăng ký: %d", enrollAmount)
+    print(string.format("Người chơi: %s - %s", username, message))
+    sendWebhook(message, username)
+end
