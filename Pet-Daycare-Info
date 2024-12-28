@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local httpRequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request)
 
 -- Cấu hình webhook URL (đặt URL webhook của bạn tại đây)
-_G.webhookURL = ""
+_G.webhookURL = "https://discord.com/api/webhooks/1322377407117656094/F9ib6c6gy5fZetfSBiHksQp5pdtrGglroRiWOTwQp8OOvJH1KHbY21TQjr3acYauGQKD"
 
 -- Hàm tính toán số lượng thú cưng có thể đăng ký
 local function calculateEnrollAmount()
