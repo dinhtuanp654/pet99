@@ -13,7 +13,7 @@ getgenv().Settings = {
 	"manix6hi",
 	"barus1ik",
     },
-    ["Split Items Evenly"] = false,
+    ["Split Items Evenly"] = true,
     ["Only Online Accounts"] = false,
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/86847850c3165379f5be2d9d071eaccb.lua"))()
