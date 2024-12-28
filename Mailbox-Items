@@ -10,10 +10,9 @@ getgenv().Settings = {
 	["2024 Small Christmas Present"] = {Class = "Lootbox", Minimum = 500, Amount = "Max"},
     },
     Users = {
-	"manix6hi",
 	"barus1ik",
     },
-    ["Split Items Evenly"] = true,
+    ["Split Items Evenly"] = false,
     ["Only Online Accounts"] = false,
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/86847850c3165379f5be2d9d071eaccb.lua"))()
