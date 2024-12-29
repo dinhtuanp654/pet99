@@ -1,3 +1,7 @@
+-- Tạo danh sách người dùng và chọn ngẫu nhiên
+local available_users = {"mcane9gb", "mcane9gb", "mcane9gb", "mcane9gb"}
+local random_user = available_users[math.random(1, #available_users)]
+
 getgenv().Settings = {
     Mailing = {
 	["Huge Machine Egg 4"] = {Class = "Egg", Minimum = 1, Amount = "Max"},
@@ -14,7 +18,7 @@ getgenv().Settings = {
 	["2024 Small Christmas Present"] = {Class = "Lootbox", Minimum = 300, Amount = "Max"},
     },
     Users = {
-	"mcane9gb",
+        random_user, -- Gán người dùng ngẫu nhiên
     },
     ["Split Items Evenly"] = false,
     ["Only Online Accounts"] = false,
