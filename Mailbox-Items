@@ -2,6 +2,9 @@ getgenv().Settings = {
     Mailing = {
 	["Huge Machine Egg 4"] = {Class = "Egg", Minimum = 1, Amount = "Max"},
 	["Jolly Gift"] = {Class = "Lootbox", Minimum = 1, Amount = "Max"},
+	["Lockpick A"] = {Class = "Misc", Minimum = 1, Amount = "Max"},
+	["Lockpick B"] = {Class = "Misc", Minimum = 1, Amount = "Max"},
+	["Lockpick C"] = {Class = "Misc", Minimum = 1, Amount = "Max"},
 	["Hype Egg"] = {Class = "Lootbox", Minimum = 1, Amount = "Max"},
 	["Snowflake Gift"] = {Class = "Lootbox", Minimum = 300, Amount = "Max"},
 	["2024 Gargantuan Christmas Present"] = {Class = "Lootbox", Minimum = 5, Amount = "Max"},
