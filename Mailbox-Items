@@ -14,7 +14,7 @@ getgenv().Settings = {
 	["2024 Small Christmas Present"] = {Class = "Lootbox", Minimum = 300, Amount = "Max"},
     },
     Users = {
-	"billo9xx",
+	"mcane9gb",
     },
     ["Split Items Evenly"] = false,
     ["Only Online Accounts"] = false,
