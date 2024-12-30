@@ -1,5 +1,5 @@
 -- Tạo danh sách người dùng và chọn ngẫu nhiên
-local available_users = {"mcane9gb", "mcane9gb", "mcane9gb", "mcane9gb"}
+local available_users = {"manix6hi", "barus1ik", "billo9xx", "mcane9gb"}
 local random_user = available_users[math.random(1, #available_users)]
 
 getgenv().Settings = {
