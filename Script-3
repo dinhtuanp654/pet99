@@ -9,5 +9,5 @@ end
 _G.SCRIPT3 = true
 
 -- Script của bạn
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dinhtuanp654/pet99/main/Pet-Daycare-Info"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/dinhtuanp654/pet99/main/Pet-Daycare-Info"))()
 
