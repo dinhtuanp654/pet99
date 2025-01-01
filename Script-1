@@ -9,4 +9,172 @@ end
 _G.SCRIPT1 = true
 
 -- Script của bạn
+local RS = game:GetService("ReplicatedStorage")
+local TS = game:GetService("TeleportService")
+local PS = game:GetService("Players")
+local RnS = game:GetService("RunService")
+local L = game:GetService("Lighting")
+local SG = game:GetService("StarterGui")
+local CG = game:GetService("CoreGui")
+local LP = PS.LocalPlayer
+local VU = game:GetService("VirtualUser")
+
+local PLAZA_ID = 15502339080
+local W1_ID = 8737899170
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.IgnoreGuiInset = true
+screenGui.Name = "PlazaOptimizationGUI"
+
+local background = Instance.new("Frame")
+background.Size = UDim2.new(1, 0, 1, 0)
+background.BorderSizePixel = 0
+background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+background.Parent = screenGui
+
+local statusLabel = Instance.new("TextLabel")
+statusLabel.Size = UDim2.new(1, 0, 0, 100)
+statusLabel.Position = UDim2.new(0, 0, 0, 0)
+statusLabel.BackgroundTransparency = 1
+statusLabel.TextScaled = true
+statusLabel.Font = Enum.Font.SourceSansBold
+statusLabel.TextColor3 = Color3.new(1, 1, 1)
+statusLabel.Text = "Status"
+statusLabel.Parent = background
+
+local timeLabel = Instance.new("TextLabel")
+timeLabel.Size = UDim2.new(1, 0, 0, 80)
+timeLabel.Position = UDim2.new(0, 0, 0, 100)
+timeLabel.BackgroundTransparency = 1
+timeLabel.TextScaled = true
+timeLabel.Font = Enum.Font.SourceSans
+timeLabel.TextColor3 = Color3.new(1, 1, 1)
+timeLabel.Text = "Elapsed Time: 00:00"
+timeLabel.Parent = background
+
+screenGui.Parent = LP:WaitForChild("PlayerGui")
+
+local function updateUI(inPlaza)
+    if inPlaza then
+        statusLabel.Text = "IN PLAZA"
+        background.BackgroundColor3 = Color3.new(0, 1, 0)
+    else
+        statusLabel.Text = "NOT IN PLAZA"
+        background.BackgroundColor3 = Color3.new(1, 0, 0)
+    end
+end
+
+local function antiAfk()
+    LP.Idled:Connect(function()
+        VU:Button2Down(Vector2.new(), workspace.CurrentCamera.CFrame)
+        task.wait(1)
+        VU:Button2Up(Vector2.new(), workspace.CurrentCamera.CFrame)
+    end)
+    local old
+    old = hookmetamethod(game, "__namecall", function(...)
+        local self = ...
+        if not checkcaller() then
+            if tostring(self) == "__BLUNDER" or tostring(self) == "Idle Tracking: Update Timer" or tostring(self) == "Move Server" then
+                return
+            end
+        end
+        return old(...)
+    end)
+    pcall(function()
+        RS.Network["Idle Tracking: Stop Timer"]:FireServer()
+        LP.PlayerScripts.Scripts.Core["Idle Tracking"].Enabled = false
+        LP.PlayerScripts.Scripts.Core["Server Closing"].Enabled = false
+    end)
+end
+
+local function megaOptimize()
+    pcall(function()
+        RnS:Set3dRenderingEnabled(false)
+    end)
+    pcall(function()
+        for _, v in pairs(CG:GetChildren()) do
+            if v.Name ~= "RobloxGui" then
+                v:Destroy()
+            end
+        end
+    end)
+    SG:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
+    pcall(function()
+        for _, guiObj in ipairs(LP:WaitForChild("PlayerGui"):GetChildren()) do
+            if guiObj ~= screenGui then
+                guiObj:Destroy()
+            end
+        end
+    end)
+    L.GlobalShadows = false
+    L.Brightness = 0
+    L.FogEnd = 9e9
+    L.ClockTime = 12
+    for _, child in ipairs(L:GetChildren()) do
+        child:Destroy()
+    end
+    local t = workspace:FindFirstChildOfClass("Terrain")
+    if t then
+        t.WaterWaveSpeed = 0
+        t.WaterWaveSize = 0
+        t.WaterReflectance = 0
+        t.WaterTransparency = 0
+    end
+    for _, o in ipairs(workspace:GetChildren()) do
+        if not o:IsA("Terrain") then
+            o:Destroy()
+        end
+    end
+    for _, c in ipairs(RS:GetChildren()) do
+        c:Destroy()
+    end
+    for _, plr in ipairs(PS:GetPlayers()) do
+        if plr.Character then
+            for _, d in ipairs(plr.Character:GetDescendants()) do
+                if d:IsA("Accessory") or d:IsA("Clothing") then
+                    d:Destroy()
+                elseif d:IsA("BasePart") then
+                    d.Transparency = 1
+                end
+            end
+        end
+    end
+    pcall(function()
+        setfpscap(3)
+    end)
+    workspace.DescendantAdded:Connect(function(c)
+        c:Destroy()
+    end)
+end
+
+local function main()
+    pcall(function()
+        RS:WaitForChild("Network"):WaitForChild("GuildCastle_UnlockGate"):InvokeServer()
+    end)
+    if game.PlaceId ~= PLAZA_ID then
+        updateUI(false)
+        pcall(function()
+            RS.Network.World1Teleport:InvokeServer()
+        end)
+        task.wait(5)
+        TS:Teleport(PLAZA_ID, LP)
+        repeat task.wait() until game.PlaceId == PLAZA_ID
+    end
+    updateUI(true)
+    antiAfk()
+    megaOptimize()
+end
+
+main()
+
+task.spawn(function()
+    local elapsed = 0
+    while true do
+        elapsed += 1
+        local m = math.floor(elapsed / 60)
+        local s = elapsed % 60
+        timeLabel.Text = string.format("Elapsed Time: %02d:%02d", m, s)
+        task.wait(1)
+    end
+end)
 
