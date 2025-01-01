@@ -9,5 +9,5 @@ end
 _G.SCRIPT1 = true
 
 -- Script của bạn
-
+if game.PlaceId ~= 8737899170 then repeat game.ReplicatedStorage.Network.World1Teleport:InvokeServer() task.wait(10) until game.PlaceId == 8737899170 end
 
