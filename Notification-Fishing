@@ -6,7 +6,6 @@ end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hoith95/Pet-99/main/Notification"))()
 
--- Hàm chạy song song
 spawn(function()
     while true do
         wait(1)  -- chờ 1 giây
