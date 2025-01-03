@@ -12,5 +12,6 @@ _G.SCRIPT4 = true
 getgenv().Config = {
     ["Webhook"] = "https://discord.com/api/webhooks/1324537338000310353/7z92hfz9o1h3HwsX4pVdoGVYpfKU2dx495X30wI4zwgEdYP0AXZ3Z5WG2skYsy0_p7Nj",
     ["UserID"] = "1263292904953217072",
+    ["Instance"] = "Digsite", -- or AdvancedDigsite
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e43eeb29211cc04ff3dad8003ed8deaa.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fe19d85877f65700134ca559ad130810.lua"))()
