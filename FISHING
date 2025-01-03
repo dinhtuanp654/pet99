@@ -1,0 +1,12 @@
+-- Script 1: Chờ trạng thái hoàn thành và thực thi
+print("Kiểm tra trạng thái Script 0...")
+
+-- Chờ đến khi trạng thái _G.KITTY là true
+while not _G.KITTY do
+    print("Script 0 chưa hoàn thành, đang chờ...")
+    task.wait(1) -- Chờ 1 giây trước khi kiểm tra lại
+end
+
+-- Khi trạng thái là true, thực thi Script 1
+print("Script 0 đã hoàn thành. Bắt đầu chạy Script 1...")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hoith95/Pet-99/main/Fishing"))()
