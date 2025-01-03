@@ -6,8 +6,17 @@ end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hoith95/Pet-99/main/Notification"))()
 
-while true do
-    wait(1)  -- chờ 1 giây
-    _G.WEBHOOK = true
-    _G.Notification = true
-end
+-- Hàm chạy song song
+spawn(function()
+    while true do
+        wait(1)  -- chờ 1 giây
+        _G.WEBHOOK = true
+    end
+end)
+
+spawn(function()
+    while true do
+        wait(1)  -- chờ 1 giây
+        _G.Notification = true
+    end
+end)
