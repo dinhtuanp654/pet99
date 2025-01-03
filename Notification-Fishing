@@ -4,9 +4,6 @@ if _G.Notification then
     return -- Dừng script nếu đã chạy
 end
 
--- Đánh dấu script đã được chạy
-_G.Notification = true
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hoith95/Pet-99/main/Notification"))()
 
 while true do
