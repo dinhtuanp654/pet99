@@ -8,6 +8,6 @@ end
 _G.WEBHOOK = true
 
 getgenv().Webhook = {
-    ["Hatching"] = "https://discord.com/api/webhooks/1318778061742804992/m_I4AUoYpQphYGsercjfOI3fn3Og1BMqzDWjgG250oc5HMcfrGUEc_zHKlZ-KlPhlh8L"
+    ["Hatching"] = "https://discord.com/api/webhooks/1324537338000310353/7z92hfz9o1h3HwsX4pVdoGVYpfKU2dx495X30wI4zwgEdYP0AXZ3Z5WG2skYsy0_p7Nj"
 }
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hoith95/Pet-99/main/WEBHOOK"))()
