@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Hoith95/Pet-99/main/Notification"))()
-
 -- Kiểm tra biến toàn cục để xác định script đã chạy hay chưa
 if _G.Notification then
     warn("Script đã được chạy trước đó!")
@@ -8,6 +6,8 @@ end
 
 -- Đánh dấu script đã được chạy
 _G.Notification = true
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hoith95/Pet-99/main/Notification"))()
 
 while true do
     wait(1)  -- chờ 1 giây
