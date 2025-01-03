@@ -1,1 +1,3 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dinhtuanp654/pet99/main/WEBHOOK-FISHING"))()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dinhtuanp654/pet99/main/Notification-Fishing"))()
