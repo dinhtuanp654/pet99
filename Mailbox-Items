@@ -13,7 +13,7 @@ local random_user = available_users[math.random(1, #available_users)]
 
 getgenv().Settings = {
     Mailing = {
-	["Huge Machine Egg 4"] = {Class = "Egg", Minimum = 1, Amount = "Max"},
+	["Huge Machine Egg 4"] = {Class = "Egg", Minimum = 1, Amount = 1},
 	["Jolly Gift"] = {Class = "Lootbox", Minimum = 1, Amount = "Max"},
 	["Lockpick A"] = {Class = "Misc", Minimum = 200, Amount = "Max"},
 	["Lockpick B"] = {Class = "Misc", Minimum = 5, Amount = "Max"},
